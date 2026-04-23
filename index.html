@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bruno Chazeaud | Spécialiste Modélisation Quantitative | EFOR</title>
+  <!-- Polices & Icônes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #1e293b; overflow: hidden; }
+    
+    /* Défilement des slides */
+    .slide-container { height: 100vh; width: 100vw; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; }
+    .slide { height: 100vh; width: 100vw; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; position: relative; }
+    
+    /* Couleurs EFOR (adaptées de son identité) */
+    .bg-efor-dark { background: #0a1f33; }
+    .bg-efor-blue { background: #0a3b5c; }
+    .bg-efor-light { background: #f8fafc; }
+    .bg-efor-white { background: #ffffff; }
+    .text-efor-blue { color: #1e5a8a; }
+    .text-efor-dark { color: #0a1f33; }
+    .border-efor { border-color: #1e5a8a; }
+    .btn-efor { background: #1e5a8a; color: white; padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background 0.3s; }
+    .btn-efor:hover { background: #0a3b5c; }
+    
+    /* Cartes & Badges */
+    .card { background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+    .badge { background: #e0f2fe; color: #0a3b5c; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
+    
+    /* Animations */
+    .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+    .delay-1 { animation-delay: 0.2s; opacity: 0; }
+    .delay-2 { animation-delay: 0.4s; opacity: 0; }
+    .delay-3 { animation-delay: 0.6s; opacity: 0; }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    
+    /* Navigation */
+    .nav-btn { position: fixed; right: 2rem; background: white; border: none; width: 3rem; height: 3rem; border-radius: 50%; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); cursor: pointer; font-size: 1.2rem; color: #1e5a8a; z-index: 1000; transition: all 0.3s; }
+    .nav-btn:hover { background: #1e5a8a; color: white; }
+    #btn-next { bottom: 6rem; }
+    #btn-prev { bottom: 2rem; }
+    
+    /* Overlay */
+    .overlay { position: absolute; inset: 0; background: rgba(10, 31, 51, 0.7); z-index: 1; }
+    .hero-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; z-index: 0; }
+    .content { position: relative; z-index: 2; max-width: 900px; width: 100%; }
+    
+    /* Listes */
+    ul.checks li { list-style: none; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+    ul.checks li i { color: #1e5a8a; font-size: 1.2rem; }
+  </style>
+</head>
+<body>
+  <div class="slide-container" id="scroller">
+    
+    <!-- SLIDE 1 - HERO -->
+    <section class="slide bg-efor-dark" style="justify-content: center;">
+      <div class="hero-bg"></div>
+      <div class="overlay"></div>
+      <div class="content fade-in" style="text-align: center; color: white;">
+        <p style="letter-spacing: 4px; text-transform: uppercase; font-weight: 500; font-size: 0.9rem; margin-bottom: 1rem;">Spécialiste en Modélisation Quantitative des Risques</p>
+        <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1rem;">Bruno Chazeaud</h1>
+        <p style="font-size: 1.5rem; font-weight: 300; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">L'expertise de la donnée au service de votre <span style="font-weight: 700; border-bottom: 3px solid #38bdf8;">performance industrielle</span> et de la <span style="font-weight: 700; border-bottom: 3px solid #38bdf8;">maîtrise des risques</span>.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="mailto:bruno.chazeaud.data@gmail.com" class="btn-efor" style="font-size: 1.1rem;"><i class="fas fa-envelope"></i> Me contacter</a>
+          <span style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;"><i class="fas fa-phone"></i> 06 34 44 21 02</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2 - VOTRE ENVIRONNEMENT (EFOR) -->
+    <section class="slide bg-efor-white">
+      <div class="content fade-in">
+        <p style="color: #1e5a8a; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Pourquoi Efor ?</p>
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; margin-bottom: 2rem; color: #0a1f33;">Comprendre votre écosystème</h2>
+        <div class="card" style="max-width: 750px; margin: 0 auto; border-left: 5px solid #1e5a8a;">
+          <p style="font-size: 1.1rem; line-height: 1.6;">Efor, leader mondial du conseil en Sciences de la Vie, accompagne les industries <strong>pharmaceutiques, biotechnologiques et medtech</strong> sur l'ensemble du cycle de vie des produits. Votre croissance (+20%/an) et vos ambitions internationales s'appuient sur 5 piliers : <strong>Ingénierie, CQV, Assurance Qualité, Affaires Réglementaires et Vigilances</strong>.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; justify-content: center;">
+          <span class="badge">Ingénierie</span>
+          <span class="badge">CQV</span>
+          <span class="badge">QA / Conformité</span>
+          <span class="badge">Affaires Réglementaires</span>
+          <span class="badge">Vigilances</span>
+          <span class="badge">Digital & Data</span>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-weight: 300; color: #475569;">Je comprends vos enjeux : <strong>sécuriser vos process, maîtriser vos risques et accélérer la mise sur le marché</strong> grâce à une rigueur analytique et une exploitation intelligente des données.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 3 - PROFIL RECHERCHÉ (LE BESOIN) -->
+    <section class="slide bg-efor-light">
+      <div class="content fade-in">
+        <p style="color: #1e5a8a; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Votre besoin</p>
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; margin-bottom: 2rem; color: #0a1f33;">Le profil que vous recherchez</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-cogs" style="font-size: 2.5rem; color: #1e5a8a; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Modélisation de risques</h3>
+            <p>Analyse de criticité, AMDEC, plans de gestion des risques (RMP), conformité ISO 14971</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #1e5a8a; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Data Science avancée</h3>
+            <p>Machine Learning, modèles prédictifs, analyse de données OMICS, Power BI</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-industry" style="font-size: 2.5rem; color: #1e5a8a; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Performance industrielle</h3>
+            <p>Maîtrise statistique des procédés, data visualisation, optimisation supply chain</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4 - MON PARCOURS (EXPÉRIENCES) -->
+    <section class="slide bg-efor-white">
+      <div class="content fade-in">
+        <p style="color: #1e5a8a; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Atouts</p>
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; margin-bottom: 2rem; color: #0a1f33;">Expériences clés transposables</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+          <div class="card" style="border-top: 5px solid #1e5a8a;">
+            <h3 style="font-weight: 600; font-size: 1.3rem; margin-bottom: 0.5rem;">Forsides (Actuariat)</h3>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1rem;">Modélisation de risques climatiques</p>
+            <ul class="checks" style="font-size: 0.9rem;">
+              <li><i class="fas fa-check-circle"></i> Modèle prédictif sur >5M de lignes</li>
+              <li><i class="fas fa-check-circle"></i> Temps de calcul divisé par 3</li>
+              <li><i class="fas fa-check-circle"></i> Librairie open source CLIMADA</li>
+              <li><i class="fas fa-check-circle"></i> Analyse de risques & décision</li>
+            </ul>
+          </div>
+          <div class="card" style="border-top: 5px solid #1e5a8a;">
+            <h3 style="font-weight: 600; font-size: 1.3rem; margin-bottom: 0.5rem;">Société Générale</h3>
+            <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1rem;">Analyse des risques crédit</p>
+            <ul class="checks" style="font-size: 0.9rem;">
+              <li><i class="fas fa-check-circle"></i> Évaluation de la solvabilité</li>
+              <li><i class="fas fa-check-circle"></i> Cartographie des processus</li>
+              <li><i class="fas fa-check-circle"></i> Reportings réglementaires</li>
+              <li><i class="fas fa-check-circle"></i> Conformité & contrôle interne</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5 - COMPÉTENCES & MÉTHODOLOGIE -->
+    <section class="slide bg-efor-light">
+      <div class="content fade-in">
+        <p style="color: #1e5a8a; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Boîte à outils</p>
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-top: 0.5rem; margin-bottom: 2rem; color: #0a1f33;">Compétences à forte valeur ajoutée</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-code" style="font-size: 2rem; color: #1e5a8a; margin-bottom: 0.5rem;"></i>
+            <h4 style="font-weight: 600;">Langages</h4>
+            <p>Python, R, SQL, VBA</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-brain" style="font-size: 2rem; color: #1e5a8a; margin-bottom: 0.5rem;"></i>
+            <h4 style="font-weight: 600;">Machine Learning</h4>
+            <p>Scikit-learn, Keras, statsmodels</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-chart-pie" style="font-size: 2rem; color: #1e5a8a; margin-bottom: 0.5rem;"></i>
+            <h4 style="font-weight: 600;">Data Visualisation</h4>
+            <p>Power BI, Matplotlib, Seaborn</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-database" style="font-size: 2rem; color: #1e5a8a; margin-bottom: 0.5rem;"></i>
+            <h4 style="font-weight: 600;">Data Engineering</h4>
+            <p>SQL, MongoDB, Fabric (notions)</p>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-weight: 500; color: #1e5a8a;">Double compétence : Économie/Finance & Data Science → un atout pour vos analyses coût/bénéfice et ROI.</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 - VALEUR AJOUTÉE (VERBES D'ACTION) -->
+    <section class="slide bg-efor-white">
+      <div class="content fade-in">
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; color: #0a1f33; text-align: center;">Ce que je vous apporte</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-search" style="font-size: 2.5rem; color: #1e5a8a; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Modéliser</h3>
+            <p>Créer des modèles prédictifs pour anticiper les défaillances, estimer les risques et optimiser la maintenance.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-comments" style="font-size: 2.5rem; color: #1e5a8a; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Vulgariser</h3>
+            <p>Traduire des résultats complexes en recommandations claires pour les équipes métier et les clients.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <i class="fas fa-balance-scale" style="font-size: 2.5rem; color: #1e5a8a; margin-bottom: 1rem;"></i>
+            <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Sécuriser</h3>
+            <p>Apporter la rigueur statistique nécessaire aux validations de systèmes et aux analyses de risques.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7 - PROPOSITION DE VALEUR (SUR MESURE) -->
+    <section class="slide bg-efor-light">
+      <div class="content fade-in">
+        <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; color: #0a1f33; text-align: center;">Exemples de missions concrètes</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px; margin: 0 auto;">
+          <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
+            <i class="fas fa-shield-alt" style="font-size: 2rem; color: #1e5a8a; margin-top: 0.2rem;"></i>
+            <div>
+              <h4 style="font-weight: 600;">Maintenance prédictive</h4>
+              <p style="font-size: 0.9rem;">Déployer des algorithmes de détection d'anomalies pour vos équipements de production.</p>
+            </div>
+          </div>
+          <div class="card" style="display: flex; align-items: flex-start; gap: 1rem;">
+            <i class="fas fa-vial" style="font-size: 2rem; color: #1e5a8a; margin-top: 0.2rem;"></i>
+            <div>
+              <h4 style="font-weight: 600;">Optimisation de process</h4>
+              <p style="font-size: 0.9rem;">Maîtrise statistique des procédés et plan d'expériences pour vos lignes de fabrication.</p>
+            </div>
+          </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-style: italic; color: #475569;">« Je ne me contente pas d'analyser des données. Je les transforme en décisions stratégiques pour sécuriser vos activités. »</p>
+      </div>
+    </section>
+
+    <!-- SLIDE 8 - CONCLUSION -->
+    <section class="slide bg-efor-dark" style="justify-content: center;">
+      <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1352&q=80');"></div>
+      <div class="overlay"></div>
+      <div class="content fade-in" style="text-align: center; color: white; z-index: 2;">
+        <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Prêt à relever le défi</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">Mobile sur toute la France et disponible immédiatement.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="mailto:bruno.chazeaud.data@gmail.com" class="btn-efor" style="font-size: 1.1rem;"><i class="fas fa-envelope"></i> bruno.chazeaud.data@gmail.com</a>
+          <span style="background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;"><i class="fas fa-phone"></i> 06 34 44 21 02</span>
+        </div>
+        <p style="margin-top: 2rem; font-weight: 300; font-size: 0.9rem;">Master Ingénierie des Risques & Data Science | Université de Bordeaux</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Navigation -->
+  <button class="nav-btn" id="btn-next" onclick="nextSlide()"><i class="fas fa-chevron-down"></i></button>
+  <button class="nav-btn" id="btn-prev" onclick="prevSlide()"><i class="fas fa-chevron-up"></i></button>
+
+  <script>
+    const container = document.getElementById('scroller');
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    function scrollToSlide(index) {
+      if (index >= 0 && index < slides.length) {
+        container.scrollTo({ top: slides[index].offsetTop, behavior: 'smooth' });
+        current = index;
+      }
+    }
+    function nextSlide() { scrollToSlide(current + 1); }
+    function prevSlide() { scrollToSlide(current - 1); }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') prevSlide();
+    });
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      if (e.deltaY > 0) nextSlide(); else prevSlide();
+    }, { passive: false });
+  </script>
+</body>
+</html>
